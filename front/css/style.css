@@ -1,0 +1,1526 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Configurações gerais */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+:root {
+    --green-color: #2D854E;
+    --dark-green-color: #216a3d;
+    --yellow-color: #FF8324;
+    --dark-yellow-color: #d26c1e;
+    --pink-color: #EB6E8E;
+    --dark-pink-color: #c25a74;
+    --blue-color: #337BC3;
+    --dark-blue-color: #1a5c9d;
+    --purple-color: #5A3168;
+    --dark-purple-color: #42234c;
+    --main-color: #B03648;
+    --text-color: #575757;
+    --text-color-light: #909090;
+    --gray-color: #e2e2e2;
+    --white-color: #f6f6f6;
+    --black-gray-color: #2c2c2c;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: var(--white-color);
+}
+
+/* Cabeçalho */
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 23px;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    top: 0;
+    gap: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+header #tituloFatec {
+    cursor: pointer;
+}
+
+.busca {
+    background-color: var(--white-color);
+    width: 30rem;
+    height: 2.3rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 3px;
+}
+
+.busca img {
+    width: 20px;
+    height: 20px;
+}
+
+#pesquisa {
+    margin-top: 1.5px;
+    margin-left: 12px;
+    height: 1.9rem;
+    width: 28rem;
+    background-color: var(--white-color);
+    border: 0;
+    font-size: 15px;
+    color: var(--black-gray-color);
+    border-radius: 5px;
+}
+
+#pesquisa:focus {
+    outline-color: var(--white-color);
+    outline-width: 2px;
+    outline-style: solid;
+}
+
+.btn-limpar {
+    height: 2rem;
+    width: 2rem;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--text-color-light);
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    color: var(--black-gray-color);
+    /* Cor mais escura ao passar o mouse */
+}
+
+#icons {
+    width: 14rem;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 5rem;
+}
+
+#icons i {
+    text-align: center;
+    font-size: 32px;
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#icons i:hover {
+    transition: 0.2s;
+    color: var(--gray-color);
+}
+
+nav {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+}
+
+.notificacoes {
+    width: 30rem;
+    min-height: calc(100vh - 120px);
+    position: absolute;
+    background-color: var(--main-color);
+    right: 0;
+    top: -2.8rem;
+    transition: 0.3s;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+#titulo-not {
+    width: 26rem;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    color: var(--white-color);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 0.9rem;
+}
+
+#titulo-not-1 {
+    width: 26rem;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    color: var(--white-color);
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+#txt-sem-reverva {
+    margin-top: 2rem;
+    font-size: 18px;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.pendentes {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 13rem;
+    width: 28rem;
+    gap: 1rem;
+}
+
+.pendentes::-webkit-scrollbar {
+    background-color: var(--main-color);
+    width: 10px;
+}
+
+.pendentes::-webkit-scrollbar-thumb {
+    background-color: var(--white-color);
+    border-radius: 10px
+}
+
+.pendentes::-webkit-scrollbar-button {
+    display: none;
+}
+
+.aprovadas {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 13rem;
+    width: 28rem;
+    gap: 1rem;
+}
+
+.aprovadas::-webkit-scrollbar {
+    background-color: var(--main-color);
+    width: 10px;
+}
+
+.aprovadas::-webkit-scrollbar-thumb {
+    background-color: var(--white-color);
+    border-radius: 10px
+}
+
+.aprovadas::-webkit-scrollbar-button {
+    display: none;
+}
+
+.negadas {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 13rem;
+    width: 28rem;
+    gap: 1rem;
+}
+
+.negadas::-webkit-scrollbar {
+    background-color: var(--main-color);
+    width: 10px;
+}
+
+.negadas::-webkit-scrollbar-thumb {
+    background-color: var(--white-color);
+    border-radius: 10px
+}
+
+.negadas::-webkit-scrollbar-button {
+    display: none;
+}
+
+.card-pedido {
+    width: 25rem;
+    height: 4.6rem;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+#txt-card {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+#txt-card-2 {
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+#txt-card-lab {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#txt-card-hrs {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: end;
+}
+
+#txt-card-dia {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#txt-card-dic {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.perfil {
+    position: absolute;
+    top: -3rem;
+    right: 0.3rem;
+    width: 20rem;
+    min-height: 20rem;
+    background-color: var(--gray-color);
+    border: solid 2px var(--main-color);
+    border-radius: 10px;
+    transition: 0.3s;
+    padding: 1rem;
+    margin-top: 5px;
+}
+
+.usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.usuario h3 {
+    font-size: 20px;
+    text-align: center;
+    color: var(--black-gray-color);
+    transition: 0.3s;
+}
+
+#avatar {
+    background-color: var(--main-color);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    font-size: 24px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.info-perfil {
+    margin-top: 1.5rem;
+}
+
+#label {
+    color: var(--main-color);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#perfil {
+    color: var(--black-gray-color);
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+
+#email {
+    color: var(--black-gray-color);
+    margin-top: 8px;
+    margin-bottom: 2rem;
+}
+
+.info-perfil a {
+    display: block;
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.info-perfil a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: var(--white-color);
+    min-height: calc(100vh - 100px);
+}
+
+#titulo-ola {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.card-pesquisa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    gap: 5rem;
+}
+
+.busca-2 {
+    background-color: var(--gray-color);
+    width: 60rem;
+    height: 3rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+.busca-2 img {
+    width: 25px;
+    height: 25px;
+}
+
+#pesquisa-2 {
+    margin-left: 1.5rem;
+    margin-top: 1.5px;
+    height: 1.9rem;
+    width: 55rem;
+    background-color: var(--gray-color);
+    border: 0;
+    font-size: 18px;
+    color: var(--black-gray-color);
+}
+
+#pesquisa-2:focus {
+    outline-color: var(--gray-color);
+    outline-width: 2px;
+    outline-style: solid;
+}
+
+.btn-limpar2 {
+    height: 2rem;
+    width: 2rem;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color-light);
+    cursor: pointer;
+}
+
+.btn-limpar2:hover {
+    color: var(--black-gray-color);
+}
+
+#container-reservas {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#sup-reservas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#div-btn-reserva {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 3rem;
+}
+
+#div-btn-reserva #btn-reserva {
+    width: 12rem;
+    height: 2.5rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: solid 2px var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#div-filtro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#div-filtro p {
+    font-size: 18px;
+    color: var(--black-gray-color);
+}
+
+#div-filtro select {
+    background-color: var(--gray-color);
+    color: var(--black-gray-color);
+    font-size: 16px;
+    border-radius: 5px;
+    height: 1.8rem;
+    width: 8rem;
+    border: 1px solid var(--gray-color);
+}
+
+#div-filtro select:focus {
+    outline: none;
+}
+
+#div-filtro select option::before {
+    background-color: var(--main-color);
+}
+
+#container-reservas h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.card-com-reservas {
+    display: grid;
+    width: 100%;
+    min-height: 25rem;
+    max-height: 32rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+.card-com-reservas::-webkit-scrollbar {
+    background-color: var(--white-color);
+    width: 10px;
+}
+
+.card-com-reservas::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 10px
+}
+
+.card-com-reservas::-webkit-scrollbar-button {
+    display: none;
+}
+
+
+.card-reservas {
+    display: flex;
+    width: 100%;
+    min-height: 25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card-reservas p {
+    color: var(--text-color);
+    font-size: 24px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card-reservas #btn-reserva {
+    width: 14rem;
+    height: 3.5rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: solid 2px var(--main-color);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Efeito inverte as cores do botão reserva  */
+
+#container-reservas #btn-reserva:hover {
+    background-color: var(--white-color);
+    border: solid 2px var(--main-color);
+    color: var(--main-color);
+    transition: all 0.2s ease;
+}
+
+.reserva {
+    width: 100%;
+    height: 15rem;
+    border-radius: 10px;
+    background-color: var(--gray-color);
+}
+
+#sup-card-reserva {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+#sup-card-reserva p {
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#sup-card-reserva i {
+    color: var(--white-color);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#sup-card-reserva i:hover {
+    color: var(--gray-color);
+}
+
+#txt-card-0 {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 2.5rem);
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+    color: var(--black-gray-color);
+}
+
+#txt-card-3 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: start;
+
+}
+
+#txt-card-3 p {
+    text-align: left;
+}
+
+#status {
+    text-transform: capitalize;
+}
+
+#txt-card-4 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    gap: 1rem;
+    text-align: right;
+}
+
+#acoes-card-reserva {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+#acoes-card-reserva button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#acoes-card-reserva {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#acoes-card-reserva button.negar {
+    background-color: var(--main-color);
+}
+
+#acoes-card-reserva button.negar:hover {
+    background-color: #c9302c;
+}
+
+#acoes-card-reserva button.aprovar {
+    background-color: #5cb85c;
+}
+
+#acoes-card-reserva button.aprovar:hover {
+    background-color: #4cae4c;
+}
+
+@media (max-width: 1170px) {
+
+    header {
+        font-size: 21px;
+    }
+
+    .busca {
+        width: 28rem;
+        height: 2rem;
+    }
+
+    .busca img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #pesquisa {
+        height: 1.7rem;
+    }
+
+    #icons {
+        gap: 4rem;
+        height: 30px;
+    }
+
+    #icons i {
+        font-size: 30px;
+    }
+
+    .notificacoes {
+        width: 28rem;
+    }
+
+    #titulo-not {
+        width: 24rem;
+        font-size: 20px;
+    }
+
+    #titulo-not-1 {
+        width: 24rem;
+        font-size: 20px;
+    }
+
+    .pendentes {
+        width: 26rem;
+    }
+
+    .aprovadas {
+        width: 26rem;
+    }
+
+    .reprovadas {
+        width: 26rem;
+    }
+
+    .card-pedido {
+        width: 23rem;
+        height: 4rem;
+    }
+
+    #txt-card-lab {
+        font-size: 14px;
+    }
+
+    #txt-card-hrs {
+        font-size: 14px;
+    }
+
+    #txt-card-dia {
+        font-size: 14px;
+    }
+
+    #txt-card-dic {
+        font-size: 14px;
+    }
+
+    .perfil {
+        width: 17rem;
+        min-height: 18rem;
+    }
+
+    .usuario h3 {
+        font-size: 18px;
+    }
+
+    #avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 20px;
+    }
+
+
+    .info-perfil {
+        margin-top: 1.3rem;
+    }
+
+    #label {
+        font-size: 15px;
+    }
+
+    #courses {
+        margin-top: 6px;
+        margin-bottom: 14px;
+        font-size: 14px;
+    }
+
+    #email {
+        margin-top: 6px;
+        margin-bottom: 1.5rem;
+        font-size: 14px;
+    }
+
+    .info-perfil a {
+        font-size: 14px;
+    }
+
+    #titulo-ola {
+        font-size: 20px;
+    }
+
+    main h2 {
+        font-size: 28px;
+        margin-top: 1rem;
+    }
+
+    .card-reservas p {
+        font-size: 22px;
+    }
+
+    .busca-2 {
+        width: 55rem;
+        height: 2.5rem;
+    }
+
+    .busca-2 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .card-reservas #btn-reserva {
+        width: 14rem;
+        height: 3.5rem;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 987px) {
+    header {
+        font-size: 18px;
+    }
+
+    header h1 {
+        white-space: nowrap;
+    }
+
+    .busca {
+        width: 26rem;
+        height: 1.7rem;
+        border-radius: 6px;
+    }
+
+    .busca img {
+        width: 16px;
+        height: 16px;
+    }
+
+    #pesquisa {
+        height: 1.1rem;
+        border-radius: 5px;
+    }
+
+    #icons {
+        width: 6rem;
+        gap: 3rem;
+        height: 28px;
+    }
+
+    #icons i {
+        font-size: 28px;
+    }
+
+    .notificacoes {
+        width: 24rem;
+    }
+
+    #titulo-not {
+        width: 20rem;
+        font-size: 18px;
+    }
+
+    #titulo-not-1 {
+        width: 20rem;
+        font-size: 18px;
+    }
+
+    .pendentes {
+        width: 22rem;
+    }
+
+    .aprovadas {
+        width: 22rem;
+    }
+
+    .reprovadas {
+        width: 22rem;
+    }
+
+    .card-pedido {
+        width: 19rem;
+        height: 3.7rem;
+    }
+
+    #txt-card-lab {
+        font-size: 13px;
+    }
+
+    #txt-card-hrs {
+        font-size: 13px;
+    }
+
+    #txt-card-dia {
+        font-size: 13px;
+    }
+
+    #txt-card-dic {
+        font-size: 13px;
+    }
+
+    .usuario h3 {
+        font-size: 17px;
+    }
+
+    #avatar {
+        width: 2.3rem;
+        height: 2.3rem;
+        font-size: 18px;
+    }
+
+    .info-perfil {
+        margin-top: 1.1rem;
+    }
+
+    #label {
+        font-size: 14px;
+    }
+
+    #courses {
+        margin-top: 6px;
+        margin-bottom: 14px;
+        font-size: 13.5px;
+    }
+
+    #email {
+        margin-top: 6px;
+        margin-bottom: 1.5rem;
+        font-size: 13.5px;
+    }
+
+    .info-perfil a {
+        font-size: 13px;
+    }
+
+    #titulo-ola {
+        font-size: 18px;
+    }
+
+    main h2 {
+        font-size: 26px;
+        margin-top: 1rem;
+    }
+
+    .card-reservas {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .card-reservas p {
+        font-size: 20px;
+    }
+
+    .busca-2 {
+        width: 50rem;
+        height: 2.5rem;
+    }
+
+    .busca-2 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .card-reservas #btn-reserva {
+        width: 13rem;
+        height: 3rem;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 880px) {
+    header {
+        font-size: 14px;
+        height: 80px;
+    }
+
+    .busca {
+        width: 24rem;
+        height: 1.6rem;
+    }
+
+    .busca img {
+        width: 15px;
+        height: 15px;
+    }
+
+    #pesquisa {
+        height: 1rem;
+    }
+
+    #icons {
+        width: 5rem;
+        gap: 2.5rem;
+        height: 26px;
+    }
+
+    #icons i {
+        font-size: 26px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        height: 80px;
+    }
+
+    main {
+        padding-top: 2rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        min-height: calc(100vh - 160px);
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        display: none;
+    }
+
+    .busca {
+        display: none;
+    }
+
+
+    #icons {
+        display: none;
+    }
+
+    .notificacoes {
+        width: 100vw;
+        max-height: calc(100vh - 130px);
+        top: 100rem;
+        transition: 0.3s;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-top: none;
+    }
+
+    .notificacoes.mostrar {
+        top: 48rem;
+        transition: 0.3s;
+    }
+
+    .pendentes {
+        display: flex;
+        flex-direction: column;
+        justify-items: start;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 10rem;
+        width: 20rem;
+    }
+
+    .aprovadas {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 10rem;
+        width: 20rem;
+        gap: 1rem;
+        transition: 0.3s;
+    }
+
+    .reprovadas {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        overflow-y: auto;
+        max-height: 10rem;
+        width: 20rem;
+        gap: 1rem;
+        transition: 0.3s;
+    }
+
+    .perfil {
+        position: absolute;
+        top: 100rem;
+        right: 5px;
+        width: 15rem;
+        min-height: 18rem;
+        padding: 1rem;
+        margin-top: 5px;
+    }
+
+    .perfil.mostrar {
+        top: 72.5rem;
+        transition: 0.3s;
+    }
+
+    .usuario h3 {
+        font-size: 18px;
+    }
+
+    #avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 20px;
+    }
+
+
+    .info-perfil {
+        margin-top: 1.3rem;
+    }
+
+    #label {
+        font-size: 15px;
+    }
+
+    #courses {
+        margin-top: 6px;
+        margin-bottom: 14px;
+        font-size: 14px;
+    }
+
+    #email {
+        margin-top: 6px;
+        margin-bottom: 1.5rem;
+        font-size: 14px;
+    }
+
+    .info-perfil a {
+        font-size: 14px;
+    }
+
+    .nav-mobile {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--main-color);
+        padding: 1rem;
+        transition: 0.3s;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+    }
+
+    .nav-mobile ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 28px;
+        justify-content: space-around;
+        transition: 0.3s;
+    }
+
+    .nav-mobile li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .nav-mobile a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .nav-mobile i {
+        text-align: center;
+        font-size: 28px;
+        color: var(--white-color);
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    #home {
+        font-size: 26px;
+    }
+
+    .txt-footer {
+        font-size: 14px;
+        color: var(--white-color);
+        position: static;
+        transition: 0.3s;
+    }
+
+}
+
+@media (max-width: 510px) {
+
+    main {
+        padding-top: 2rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        min-height: calc(100vh - 160px);
+    }
+
+    #titulo-ola {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    main h2 {
+        font-size: 24px;
+        margin-top: 3rem;
+    }
+
+    .card-reservas p {
+        font-size: 18px;
+    }
+
+    .card-reservas #btn-reserva {
+        width: 11rem;
+        height: 3rem;
+        font-size: 18px;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        display: none;
+    }
+
+    .busca {
+        display: none;
+    }
+
+    .card-pesquisa {
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    .busca-2 {
+        width: 25rem;
+        height: 2rem;
+        border-radius: 8px;
+    }
+
+    .busca-2 img {
+        width: 16px;
+        height: 16px;
+    }
+
+    #pesquisa-2 {
+        margin-left: 1rem;
+        height: 1.5rem;
+        width: 22rem;
+        font-size: 16px;
+    }
+
+    .btn-limpar2 {
+        height: 2rem;
+        width: 2rem;
+        font-size: 20px;
+    }
+
+    #icons {
+        display: none;
+    }
+
+    .notificacoes {
+        width: 100vw;
+        max-height: calc(100vh - 130px);
+        top: 100rem;
+        transition: 0.3s;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-top: none;
+    }
+
+    .notificacoes.mostrar {
+        top: 48rem;
+        transition: 0.3s;
+    }
+
+    .pendentes {
+        display: flex;
+        flex-direction: column;
+        justify-items: start;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 10rem;
+        width: 20rem;
+    }
+
+    .aprovadas {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 10rem;
+        width: 20rem;
+        gap: 1rem;
+        transition: 0.3s;
+    }
+
+    .reprovadas {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        overflow-y: auto;
+        max-height: 10rem;
+        width: 20rem;
+        gap: 1rem;
+        transition: 0.3s;
+    }
+
+    .perfil {
+        position: absolute;
+        top: 100rem;
+        right: 5px;
+        width: 15rem;
+        min-height: 18rem;
+        padding: 1rem;
+        margin-top: 5px;
+    }
+
+    .perfil.mostrar {
+        top: 72.5rem;
+        transition: 0.3s;
+    }
+
+    .usuario h3 {
+        font-size: 18px;
+    }
+
+    #avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 20px;
+    }
+
+
+    .info-perfil {
+        margin-top: 1.3rem;
+    }
+
+    #label {
+        font-size: 15px;
+    }
+
+    #courses {
+        margin-top: 6px;
+        margin-bottom: 14px;
+        font-size: 14px;
+    }
+
+    #email {
+        margin-top: 6px;
+        margin-bottom: 1.5rem;
+        font-size: 14px;
+    }
+
+    .info-perfil a {
+        font-size: 14px;
+    }
+
+    .nav-mobile {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--main-color);
+        padding: 1rem;
+        transition: 0.3s;
+        z-index: 1;
+        bottom: 0;
+    }
+
+    .nav-mobile ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 28px;
+        justify-content: space-around;
+        transition: 0.3s;
+    }
+
+    .nav-mobile li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .nav-mobile a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .nav-mobile i {
+        text-align: center;
+        font-size: 28px;
+        color: var(--white-color);
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    #home {
+        font-size: 26px;
+    }
+
+    .txt-footer {
+        font-size: 14px;
+        color: var(--white-color);
+        position: static;
+        transition: 0.3s;
+    }
+
+}
+
+@media (max-width: 417px) {
+
+    .busca-2 {
+        width: 20rem;
+        height: 1.9rem;
+    }
+
+    #pesquisa-2 {
+        margin-left: 0.8rem;
+        height: 1.5rem;
+        width: 22rem;
+        font-size: 16px;
+    }
+
+    main h2 {
+        font-size: 23px;
+        margin-top: 2.5rem;
+    }
+
+    .card-reservas #btn-reserva {
+        width: 10rem;
+        height: 2.5rem;
+        font-size: 18px;
+    }
+
+}

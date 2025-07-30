@@ -1,0 +1,573 @@
+/* front/vue/css/laboratorio.css */
+
+
+/* Estilo para as mensagens de erro ou sucesso */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+
+:root {
+    --green-color: #2D854E;
+    --dark-green-color: #216a3d;
+    --yellow-color: #FF8324;
+    --dark-yellow-color: #d26c1e;
+    --pink-color: #EB6E8E;
+    --dark-pink-color: #c25a74;
+    --blue-color: #337BC3;
+    --dark-blue-color: #1a5c9d;
+    --purple-color: #5A3168;
+    --dark-purple-color: #42234c;
+    --red-color: #B03648;
+    --text-color: #575757;
+    --text-color-light: #909090;
+    --gray-color: #e2e2e2;
+    --white-color: #f6f6f6;
+    --black-gray-color: #2c2c2c;
+    --gray-color-dark: #c9c9c9;
+    --cor-andar: null;
+    font-family: "Inter", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Estilos para o botão do dropdown */
+.color-dropdown button {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Lista do dropdown */
+.dropdown-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-list .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-list .dropdown-item:hover {
+    background-color: #ddd;
+}
+
+/* Estilos para o carrossel */
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.carousel-item {
+    border-radius: 0rem 4rem 4rem 0rem;
+    font-size: 16px;
+    height: auto;
+    /* Ajusta a altura conforme o conteúdo */
+    display: inline-flex;
+    /* Garante que o item redimensione-se com o conteúdo */
+    justify-content: start;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    /* Mantém o espaçamento */
+    background-color: var(--gray-color);
+    /* Cor de fallback */
+    white-space: nowrap;
+    /* Impede quebra de linha no texto */
+}
+
+.container-andares {
+    margin-bottom: 2rem;
+}
+
+#card-cinza {
+    background-color: var(--gray-color);
+    border-radius: 17px;
+    width: 100%;
+    height: 8rem;
+    margin-top: 18px;
+    text-align: center;
+    cursor: pointer;
+    /* Flexbox para centralizar o conteúdo */
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    margin-bottom: 2rem;
+}
+
+
+#titulo {
+    color: var(--red-color);
+    font-size: 18px;
+    font-weight: medium;
+}
+
+#container-center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-circle {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    /* Flexbox para centralizar o texto dentro do botão */
+    justify-content: center;
+    /* Centraliza o texto horizontalmente */
+    align-items: center;
+    /* Centraliza o texto verticalmente */
+    font-size: 4rem;
+    color: var(--gray-color);
+    font-weight: 300;
+    padding-bottom: 0.4rem;
+}
+
+.modal-overlay {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-card {
+    background-color: #e2e2e2;
+    border-radius: 17px;
+    padding: 35px;
+    position: fixed;
+    z-index: 9999;
+    align-items: center;
+    height: 30rem;
+    width: 30rem;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: #B03648;
+    color: #fff;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -35px;
+    width: 248px;
+    height: 48px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+#titulo-andar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 15px;
+}
+
+#titulo-andar h1 {
+    color: var(--red-color);
+    font-size: 20px;
+}
+
+span {
+    color: var(--red-color);
+    font-size: 20px;
+}
+
+#formulario-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: start;
+    margin-top: 26px;
+}
+
+.p {
+    align-items: start;
+    color: var(--black-gray-color);
+    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
+}
+
+.p h2 {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.box-input-nome {
+    background-color: var(--white-color);
+    align-items: start;
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+}
+
+.input-nome {
+    width: 100%;
+    height: 100%;
+    padding: 12px; /* Aumenta a espessura do input */
+    margin-bottom: 15px; /* Aumenta o espaço entre os inputs */
+    border-radius: 10px;
+    border: none;
+    background-color: var(--white-color);
+    color: var(--black-gray-color);
+    padding-left: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Aumenta o tamanho da fonte para facilitar a leitura */
+}
+
+.box-input-cor {
+    background-color: var(--white-color);
+    align-items: start;
+    width: 180px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#select-cores {
+    width: 180px;
+    height: 40px;
+    background-color: var(--white-color);
+    border: none;
+    color: var(--black-gray-color);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#select-cores:focus {
+    outline: none;
+} 
+
+.input-cor {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+    background-color: var(--white-color);
+    color: var(--black-gray-color);
+    padding-left: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+#aviso {
+    bottom: 20px;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: start;
+    font-size: 14px;
+}
+
+#aviso h2 {
+    color: var(--red-color);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* estilo para o botão + andar */
+.modal-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 12%;
+}
+
+.modal-actions button {
+    height: 35px;
+    border-radius: 10px;
+    width: 120px;
+    border: 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Cores dos botões */
+.create-btn {
+    background-color: var(--green-color);
+    /* Cor verde */
+    color: white;
+    border: 2px solid var(--green-color);
+    /* Cor da borda igual ao fundo */
+    font-weight: bolder;
+}
+
+.create-btn:hover {
+    background-color: #ffffff;
+    /* Cor verde */
+    color: var(--green-color);
+    border: 2px solid var(--green-color);
+    /* Cor da borda igual ao fundo */
+    font-weight: bolder;
+}
+
+.cancel-btn {
+    background-color: #B03648;
+    /* Cor vermelha */
+    color: white;
+    border: 2px solid #B03648;
+    font-weight: bolder;
+}
+
+.cancel-btn:hover {
+    background-color: #ffffff;
+    /* Cor vermelha */
+    color: #B03648;
+    border: 2px solid #B03648;
+    font-weight: bolder;
+}
+
+.save-btn:hover {
+    color: var(--white-color);
+    background-color: var(--black-gray-color);
+}
+
+.andar-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white-color);
+    text-transform: capitalize;
+}
+
+.card-lab {
+    min-width: 13rem;
+    min-height: 18rem;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.card-lab:hover {
+    background-color: var(--gray-color-dark);
+}
+
+.card-lab #barra-card {
+    width: 100%;
+    height: 1.5rem;
+    background-color: var(--cor-andar);
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    top: 0;
+}
+
+.card-lab #nome-lab {
+    color: var(--cor-andar);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lab-content {
+    background-color: var(--white-color);
+    width: 80%;
+    height: 10rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.lab-content #img-lab {
+    width: 100%;
+    height: 50%;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.descricao-lab {
+    margin-top: 0.3rem;
+    width: 100%;
+    max-height: 5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.descricao-lab::-webkit-scrollbar {
+    background-color: var(--white-color);
+    width: 5px;
+}
+
+.descricao-lab::-webkit-scrollbar-thumb {
+    background-color: var(--gray-color);
+    border-radius: 5px
+}
+
+.descricao-lab::-webkit-scrollbar-button {
+    display: none;
+}
+
+.descricao-lab ul {
+    line-height: 1.5;
+    font-size: 12px;
+    width: 96%;
+    max-height: 100%;
+    line-break: anywhere;
+    color: var(--text-color);
+    text-align: left;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.btn-calendario {
+    border: none;
+    font-size: 14px;
+    color: var(--white-color);
+    width: 7rem;
+    height: 2rem;
+    background-color: var(--cor-andar);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-calendario:hover {
+    background-color: var(--cor-andar);
+}
+
+#card-cinza-laboratorio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 15rem;
+    height: 15rem;
+    background-color: var(--gray-color);
+    border-radius: 17px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ações do Modal */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    /* Espaçar botões igualmente */
+}
+
+/* Carrossel para os laboratórios */
+.laboratorio-carrossel {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    padding: 10px;
+}
+
+.delete-btn {
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border: 1px solid var(--red-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: var(--white-color);
+    color: var(--red-color);
+    border: 1px solid var(--red-color)
+}
+
+.delete-btn {
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border: 1px solid var(--red-color);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .delete-btn:hover {
+    background-color: var(--white-color);
+    color: var(--red-color);
+    border: 1px solid var(--red-color);
+  }
+
+  .andar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding-bottom: 1rem;
+    gap: 2rem;
+    overflow-x: auto;
+    min-width: 79%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    height: 22rem;
+  }
+  
+  .andar::-webkit-scrollbar {
+    background-color: var(--white-color);
+    height: 12px;
+    
+  }
+  
+  .andar::-webkit-scrollbar-thumb {
+    background-color: var(--gray-color);
+    border-radius: 5px;
+    cursor: grab;
+  }
+  
+  .andar::-webkit-scrollbar-button {
+    display: none;
+  }
+  
